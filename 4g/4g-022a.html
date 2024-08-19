@@ -1,0 +1,26 @@
+<body onload="mailcheck()">
+<script>
+var token = null;
+function mailcheck() {
+  var req = new XMLHttpRequest();
+  req.open("GET", "4g-020a.php");
+  req.onreadystatechange = function() {
+    if (req.readyState == 4 && req.status == 200) {
+      var obj = JSON.parse(req.responseText);
+      var p_mail = document.getElementById("p_mail");
+      p_mail.textContent = "メールアドレス:" + obj.mail;
+      token = obj.token;
+    }
+  };
+  req.send(null);
+}
+
+function chgmail() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "4g-021a.php");
+//省略
+  var mail = document.getElementById('mail').value;
+  json = JSON.stringify({"mail": mail});
+  req.send(json);
+}
+//略

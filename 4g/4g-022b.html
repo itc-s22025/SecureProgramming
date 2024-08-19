@@ -1,0 +1,22 @@
+<body onload="mailcheck()">
+<script src="../js/js.cookie.js"></script>
+<script>
+function mailcheck() {
+//略
+}
+
+function chgmail() {
+  var req = new XMLHttpRequest();
+  req.open("POST", "4g-021b.php");
+  req.withCredentials = true;
+  req.onreadystatechange = function() {
+	//略
+  };
+  var token = Cookies.get('CSRF_TOKEN');  //クッキーからトークンを取得
+  req.setRequestHeader('X-CSRF-Token', token);
+  var mail = document.getElementById('mail').value;
+  json = JSON.stringify({"mail": mail});
+  req.send(json);
+}
+</script>
+//略
