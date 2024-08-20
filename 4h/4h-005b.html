@@ -1,0 +1,4 @@
+var color = parseInt(uri.query(true).color);
+if (! color) color = "1";
+
+$('input[name="color"][value="' + color + '"]').attr("checked", true);

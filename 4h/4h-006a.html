@@ -1,0 +1,8 @@
+var url = location.hash.slice(1);
+  if (url.match(/^https?:\/\//)) {
+    location.href = url;
+  } else {
+    alert('遷移先URLが不適切');
+  }
+}
+

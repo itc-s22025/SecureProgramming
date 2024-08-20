@@ -1,0 +1,6 @@
+function chghash() {
+  var hash = window.location.hash;
+  var color = document.getElementById("color");
+  color.textContent = decodeURIComponent(window.location.hash.slice(1));
+}
+

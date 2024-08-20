@@ -1,0 +1,7 @@
+var menus = {menu_a: 'menu_a.html',
+             menu_b: 'menu_b.html',
+             menu_c: 'menu_c.html',
+             menu_d: 'menu_d.html'};
+
+var url = menus[location.hash.slice(1)];
+if (! url) url = 'menu_a.html';
